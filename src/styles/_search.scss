@@ -1,0 +1,71 @@
+.searchContainer {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+
+    .searchContainer__search {
+        display: flex;
+        width: 420px;
+    input {
+        flex-grow: 1;
+    }
+    label {
+        margin-top: 0.3rem;
+        margin-left: 0.1rem;
+        flex-shrink: 0;
+        color: rgb(40, 40, 40);
+    }
+    }
+
+    input {
+        -webkit-appearance: none; /* For iOS and Safari */
+        -moz-appearance: none;    /* For Firefox */
+        appearance: none; 
+        border-style: 1px solid grey;
+        border-radius: 5px;
+        height: 28px;
+        font-size: 20px;
+        padding: 0.2rem;
+    }
+
+    .searchContainer__ul {
+        list-style: none;
+        width: 100%;
+        font-size: 20px;
+        padding: 0.2rem;
+        background-color: white;
+    }
+
+    .searchContainer__results {
+        background-color: white;
+        width: 420px;
+        position: absolute;
+        z-index: 1000; /* Ensure it's above other content */
+        top: 100%; /* Position it right below the search input */
+        max-height: 300px; /* Adjust based on your needs */
+        overflow-y: auto; 
+        background: white; /* Or any color fitting your design */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        li{
+            margin-top: 0.5rem;
+            background-color: rgb(238, 238, 238);
+            padding: 0.1rem 0.1rem;
+        }
+        li:hover {
+            background-color: rgb(219, 219, 219);
+        }
+
+        h2 {
+            margin-top: 0.5rem;
+            margin-left: 0.25rem;
+        }
+    }
+}

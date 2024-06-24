@@ -1,0 +1,60 @@
+.nyheter {
+    .nyhet {
+        border: 2px solid transparent;
+        transition: border 0.3s ease; 
+        margin-top: 2rem;
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 7px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        background-color: white;
+        height: 125px;
+        display: block;
+        text-decoration: none;
+        color: black;
+
+        .nyhet__header {
+            h3 {
+                margin-bottom: 0.75rem;
+            }
+            .nyhet__header__date {
+                font-style: italic;
+                margin-bottom: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+    }
+
+    .nyhet:hover {
+        border: 2px solid #4b4d5b;
+      }
+}
+
+#nyheter {
+    margin-top: 4rem;
+    font-size: 32px;
+}
+
+.kontakt{
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    
+    table {
+        width: 500px;
+    }
+
+    .kontakt--p {
+        margin: 1rem 0rem;
+    }
+
+    ul {
+        margin-top: 2rem;
+    }
+    li {
+        margin-left: 2rem;
+    }
+}

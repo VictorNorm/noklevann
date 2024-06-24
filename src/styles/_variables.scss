@@ -1,0 +1,18 @@
+// grey - #d0d5dc
+// green - #86a3a1
+// snow - #8998b1
+
+$colors: (
+  'grey': #e0e8f2,
+  'blue': #07253b,
+  'activeBlue': #919eb3,
+);
+
+@function color($color-name) {
+    @if map-has-key($colors, $color-name) {
+      @return map-get($colors, $color-name);
+    } @else {
+      @warn "Unknown `#{$color-name}` in color()";
+      @return null;
+    }
+  }

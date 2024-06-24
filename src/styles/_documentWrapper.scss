@@ -1,0 +1,43 @@
+.document-wrapper {
+    border: 2px solid transparent;
+    transition: border 0.3s ease; 
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    background-color: white;
+    height: 125px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.5rem;
+
+    .document-wrapper__image {
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+    }
+
+    img {
+        height: 100%;
+    }
+
+    .document-wrapper__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 1rem;
+    }
+}
+
+.document-wrapper:hover {
+    background-color: white;
+        border: 2px solid #4b4d5b;
+}
+.document-wrapper:first-of-type {
+    margin-top: 2rem;
+}

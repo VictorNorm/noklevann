@@ -1,0 +1,27 @@
+.details {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .details__p {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .details__section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.75rem;
+    }
+
+    .details__section--date {
+        font-style: italic;
+        // margin-top: 2rem;
+    }
+}

@@ -1,0 +1,27 @@
+  .header {
+    background-color: #e0e8f2;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/forest.jpg");
+    background-position: bottom;
+    
+
+    h2 {
+      color: white;
+      font-size: 60px;
+      font-family: 'Tangerine';
+    }
+
+    a {
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.1s ease-in-out;
+    }
+    a:hover {
+      opacity: 1;
+    }
+  }
+  

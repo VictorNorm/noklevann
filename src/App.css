@@ -1,38 +1,306 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Calibri";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #a5d6f8;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-bottom: 0px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  max-width: 1100px;
+  min-height: 500px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 55px;
+  width: 100%;
+  background: linear-gradient(145deg, #111, #111, #111, #111, #111, #111, #111);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: white;
+  border-top: 2px solid white;
+  border-bottom: 3px solid white;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0;
+  width: 1100px;
+}
+.nav li {
+  font-size: 22px;
+}
+.nav a:hover {
+  border-bottom: 2px solid white;
+}
+.nav a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  background-color: #e0e8f2;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/forest.jpg");
+  background-position: bottom;
+}
+.header h2 {
+  color: white;
+  font-size: 60px;
+  font-family: "Tangerine";
+}
+.header a {
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.1s ease-in-out;
+}
+.header a:hover {
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contentCard {
+  border: 1px solid black;
+  width: 300px;
+  margin: 1rem 0rem;
 }
+.contentCard section {
+  padding: 0.5rem;
+}
+.contentCard h3 {
+  margin-bottom: 1rem;
+}
+.contentCard p {
+  margin-bottom: 1rem;
+}
+.contentCard .contentCard__image {
+  width: 100%;
+  height: 150px;
+  background-color: brown;
+  margin-bottom: 1rem;
+}
+
+.document-wrapper {
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  background-color: white;
+  height: 125px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+.document-wrapper .document-wrapper__image {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.document-wrapper img {
+  height: 100%;
+}
+.document-wrapper .document-wrapper__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+}
+
+.document-wrapper:hover {
+  background-color: white;
+  border: 2px solid #4b4d5b;
+}
+
+.document-wrapper:first-of-type {
+  margin-top: 2rem;
+}
+
+.nyheter .nyhet {
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  margin-top: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  height: 125px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.nyheter .nyhet .nyhet__header h3 {
+  margin-bottom: 0.75rem;
+}
+.nyheter .nyhet .nyhet__header .nyhet__header__date {
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+.nyheter .nyhet:hover {
+  border: 2px solid #4b4d5b;
+}
+
+#nyheter {
+  margin-top: 4rem;
+  font-size: 32px;
+}
+
+.kontakt {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.kontakt table {
+  width: 500px;
+}
+.kontakt .kontakt--p {
+  margin: 1rem 0rem;
+}
+.kontakt ul {
+  margin-top: 2rem;
+}
+.kontakt li {
+  margin-left: 2rem;
+}
+
+.searchContainer {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.searchContainer .searchContainer__search {
+  display: flex;
+  width: 420px;
+}
+.searchContainer .searchContainer__search input {
+  flex-grow: 1;
+}
+.searchContainer .searchContainer__search label {
+  margin-top: 0.3rem;
+  margin-left: 0.1rem;
+  flex-shrink: 0;
+  color: rgb(40, 40, 40);
+}
+.searchContainer input {
+  -webkit-appearance: none; /* For iOS and Safari */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none;
+  border-style: 1px solid grey;
+  border-radius: 5px;
+  height: 28px;
+  font-size: 20px;
+  padding: 0.2rem;
+}
+.searchContainer .searchContainer__ul {
+  list-style: none;
+  width: 100%;
+  font-size: 20px;
+  padding: 0.2rem;
+  background-color: white;
+}
+.searchContainer .searchContainer__results {
+  background-color: white;
+  width: 420px;
+  position: absolute;
+  z-index: 1000; /* Ensure it's above other content */
+  top: 100%; /* Position it right below the search input */
+  max-height: 300px; /* Adjust based on your needs */
+  overflow-y: auto;
+  background: white; /* Or any color fitting your design */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.searchContainer .searchContainer__results li {
+  margin-top: 0.5rem;
+  background-color: rgb(238, 238, 238);
+  padding: 0.1rem 0.1rem;
+}
+.searchContainer .searchContainer__results li:hover {
+  background-color: rgb(219, 219, 219);
+}
+.searchContainer .searchContainer__results h2 {
+  margin-top: 0.5rem;
+  margin-left: 0.25rem;
+}
+
+.details {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.details h1 {
+  font-size: 30px;
+}
+.details .details__p {
+  display: block;
+  margin-top: 1rem;
+}
+.details .details__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+.details .details__section--date {
+  font-style: italic;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  bottom: 0;
+  height: 45px;
+  border-top: 2px solid white;
+  margin-top: 3rem;
+}
+
+.nokkelen section {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.nokkelen section li {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=App.css.map */
