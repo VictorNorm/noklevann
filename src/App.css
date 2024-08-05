@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #a5d6f8;
+  background-color: rgb(204, 203, 208);
   display: flex;
   flex-direction: column;
   padding-bottom: 0px;
@@ -23,17 +23,20 @@ html, body {
   margin: 0 auto;
 }
 
+h2 {
+  margin-top: 2rem;
+  font-size: 32px;
+}
+
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 55px;
   width: 100%;
-  background: linear-gradient(145deg, #111, #111, #111, #111, #111, #111, #111);
+  background-color: rgb(5, 9, 23);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: white;
-  border-top: 2px solid white;
-  border-bottom: 3px solid white;
 }
 .nav ul {
   list-style: none;
@@ -54,14 +57,12 @@ html, body {
 }
 
 .header {
-  background-color: #e0e8f2;
+  background-color: rgb(49, 53, 67);
   height: 250px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./images/forest.jpg");
-  background-position: bottom;
 }
 .header h2 {
   color: white;
@@ -105,7 +106,7 @@ html, body {
   display: flex;
   margin-bottom: 2rem;
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(32, 40, 69);
   height: 125px;
   justify-content: center;
   align-items: center;
@@ -128,12 +129,19 @@ html, body {
   display: flex;
   flex-direction: column;
   background-color: white;
+  color: white;
+  background-color: rgb(32, 40, 69);
   padding: 1rem;
 }
+.document-wrapper section {
+  color: white;
+}
+.document-wrapper .document-wrapper__image {
+  color: white;
+}
 
-.document-wrapper:hover {
-  background-color: white;
-  border: 2px solid #4b4d5b;
+.document-wrapper:hover * {
+  text-decoration: underline;
 }
 
 .document-wrapper:first-of-type {
@@ -165,6 +173,11 @@ html, body {
 .nyheter .nyhet:hover {
   border: 2px solid #4b4d5b;
 }
+.nyheter svg {
+  font-size: 16px;
+  margin-left: 0.5rem;
+  margin-top: 0.25rem;
+}
 
 #nyheter {
   margin-top: 4rem;
@@ -179,16 +192,61 @@ html, body {
   background-color: white;
 }
 .kontakt table {
-  width: 500px;
+  width: 650px;
+}
+.kontakt td {
+  padding-right: 1rem;
 }
 .kontakt .kontakt--p {
   margin: 1rem 0rem;
 }
 .kontakt ul {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .kontakt li {
   margin-left: 2rem;
+}
+
+.henvendelser {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tr--margin-top td {
+  padding-top: 1rem;
+}
+
+.henvendelser p {
+  margin: 0 0 10px;
+}
+
+.henvendelser ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.henvendelser li {
+  margin: 0 0 5px;
+}
+
+.henvendelser strong {
+  font-weight: bold;
+}
+
+.hjem h1 {
+  margin-bottom: 2rem;
+}
+
+#viewPdf {
+  margin-top: 1rem;
+  width: 100px;
+  height: 30px;
+  margin: 1 auto;
+  margin-left: 44%;
 }
 
 .searchContainer {
@@ -282,12 +340,11 @@ html, body {
 }
 
 footer {
-  background-color: black;
+  background-color: rgb(28, 30, 38);
   color: white;
   width: 100%;
   bottom: 0;
   height: 45px;
-  border-top: 2px solid white;
   margin-top: 3rem;
 }
 
@@ -296,11 +353,36 @@ footer {
   padding: 1rem;
   border-radius: 7px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  color: white;
+  background-color: rgb(32, 40, 69);
 }
 .nokkelen section li {
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+
+#lovverk {
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: larger;
+}
+
+#lovverk:hover {
+  background-color: white;
+  border: 2px solid #4b4d5b;
+}
+
+#soknader {
+  margin: 2rem 0rem;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -68,25 +68,3 @@ function Nøkkelen() {
 
 export default Nøkkelen
 
-
-
-    // <div className='nokkelen'>
-    //     <h1>Nøkkelen</h1>
-    //     <section>
-    //         <ul>
-    //         <li>Henvendelser til styret skal i all hovedsak begrenses til søknader om utbygging i henhold til vedtatt generalplan,
-    //             oppussing av bad, skifte av soilrør, saker som er knyttet til husordensregler,
-    //             vedtekter, tvister beboerne imellom eller andre klager, ønske om beplantning,
-    //             endring av uteområder, bruk av fellesarealer, forslag til generalforsamling og forsikringssaker.</li>
-    //             <li>Henvendelser til driftsleder vil hovedsakelig dreie seg om alle former for skader (ødelagte vinduer, vannskader, kloakk tilbakeslag, defekte takrenner etc.).
-    //             Spørsmål knyttet til snømåking, strøing av stikkveier, gressklipping, henting av grøntavfall, rørfornying, mistanke om skadedyr,
-    //             oppfølging og kontakt i forbindelse med pågående arbeider i borettslaget og renovasjon.</li>
-    //             <li>Arbeidet i styret er et frivillig verv, som utføres av valgte beboere på deres fritid.
-    //             Av den grunn er ikke styret daglig betjent, og man må regne med at det tar noe tid og få svar på henvendelser.
-    //             Styret anbefaler at man ikke gjør tidsavtaler med håndverkere før det foreligger en skriftlig
-    //             tillatelse fra styret og eventuelt fra plan- og bygningsetaten om det omsøkte tiltaket. </li>
-    //         </ul>
-
-    //     </section>
-    // </div>
-

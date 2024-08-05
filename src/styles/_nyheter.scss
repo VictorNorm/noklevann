@@ -29,6 +29,12 @@
     .nyhet:hover {
         border: 2px solid #4b4d5b;
       }
+
+      svg {
+        font-size: 16px;
+        margin-left: 0.5rem;
+        margin-top: 0.25rem;
+      }
 }
 
 #nyheter {
@@ -44,7 +50,11 @@
     background-color: white;
     
     table {
-        width: 500px;
+        width: 650px;
+    }
+
+    td {
+      padding-right: 1rem;
     }
 
     .kontakt--p {
@@ -52,9 +62,53 @@
     }
 
     ul {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
     li {
         margin-left: 2rem;
     }
 }
+
+.henvendelser {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .tr--margin-top td {
+    padding-top: 1rem;
+  }
+  
+  .henvendelser p {
+    margin: 0 0 10px;
+  }
+  
+  .henvendelser ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .henvendelser li {
+    margin: 0 0 5px;
+  }
+  
+  .henvendelser strong {
+    font-weight: bold;
+  }
+
+  .hjem {
+    h1 {
+        margin-bottom: 2rem;
+    }
+  }
+
+  #viewPdf {
+    margin-top: 1rem;
+    width: 100px;
+    height: 30px;
+    margin: 1 auto;
+    margin-left: 44%;
+  }

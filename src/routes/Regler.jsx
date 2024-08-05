@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading";
 import { handlePdf } from '../functions/handlePdf';
-import { FaFile } from "react-icons/fa";
+// import { FaFile } from "react-icons/fa";
 
 function Regler() {
 
@@ -43,14 +43,18 @@ function Regler() {
 
   return (
     <>
-    <Heading heading={"Regler"}/>
+    <Heading heading={"Lovverk"}/>
+    <a href="https://lovdata.no/dokument/NLO/lov/1960-02-04-2" id='lovverk'>Les om lover fra lovdata.no her..</a>
+    <h2>Regler</h2>
     {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
   return (
-    <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
-      <img src={file.imageUrl} alt='placeholder'></img>
-      <div className='document-wrapper__container'>
-        <h3>{file.title}</h3>
-        <p>Les mer..</p>
+    <div className='regler-container'>
+      <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
+        <img src={file.imageUrl} alt='placeholder'></img>
+        <div className='document-wrapper__container'>
+          <h3>{file.title}</h3>
+          <p>Les mer..</p>
+        </div>
       </div>
     </div>
   );

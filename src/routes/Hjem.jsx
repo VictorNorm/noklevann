@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading"
 import { norwegianDate } from '../functions/norwegianDate';
 import { newsTrimmer } from '../functions/newsTrimmer';
+import { FaFile } from "react-icons/fa";
 
 function Hjem() {
   const [news, setNews] = useState([]);
@@ -26,60 +27,90 @@ function Hjem() {
   }, []);
 
   return (
-    <>
-    <Heading heading={"Styret"}/>
-
-    <div className='kontakt'>
+    <div className='hjem'>
+      <Heading heading={"Henvendelser i sommerferien"}/>
+        <div className="henvendelser">
+          <p>
+            <strong>Driftsleder</strong> har sommerferie fra 17. juli til og med 18. august. Henvendelser vil
+            først bli besvart etter driftsleders ferie.
+          </p>
+          <p>Ved akutte tilfeller ring:</p>
+          <ul>
+            <li>Brann: 110.</li>
+            <li>Brannvarsler, feil på anlegget mv Bracon v/Pål 975 18 015</li>
+            <li>Brudd på vannrør etc. Rør og Varme v/Petter 911 65 882</li>
+            <li>Kloakktilbakeslag: TT-Teknikk 02490</li>
+            <li>Strømproblemer: Front Elektro 907 19 999</li>
+            <li>Låsproblemer: Westby Lås & Innbruddsikring AS: 22 32 18 57</li>
+            <li>Trevelting: Oslo Brannvesen 21 80 21 80</li>
+            <li>Telenor (TV og internett): 915 09 000</li>
+          </ul>
+          <p>
+            Alle andre akutte henvendelser i driftslederens ferie: Bjørnar Støen 414 24 566
+          </p>
+          <p>Tekst nederst på alle sider</p>
+      </div>
+      <h2>Styret</h2>
+      <div className="kontakt">
       <table>
-        <tr>
+        <tbody>
+          <tr>
             <td><strong>Styreleder:</strong></td>
-            <td>Knut Sture Myra</td>
-        </tr>
-        <tr>
-            <td><strong>Nestleder:</strong></td>
             <td>Matilde Risopatron Berg</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
+            <td><strong>Nestleder:</strong></td>
+            <td>Pål Axelsen</td>
+          </tr>
+          <tr>
             <td><strong>Styremedlem:</strong></td>
-            <td>Helene Lunde, Pål Akselsen, Randi Mathiesen</td>
-        </tr>
-        <tr>
+            <td>Helene Lunde, Laila Eidsvaag, Randi Mathiesen</td>
+          </tr>
+          <tr>
             <td><strong>Varamedlem:</strong></td>
             <td>Jorunn Tønnesen, Tore Moberg</td>
-        </tr>
+          </tr>
+          <tr className='tr--margin-top'>
+            <td><strong>Henvendelser styret:</strong></td>
+            <td>styret@noklevann.no</td>
+          </tr>
+          <tr>
+            <td><strong>Henvendelser drift:</strong></td>
+            <td>drift@noklevann.no</td>
+          </tr>
+          <tr className='tr--margin-top'>
+            <td><strong>Driftleders arbeidstid:</strong></td>
+            <td>Mandag og tirsdag 08:00-16:00, onsdag 10:00-12:00</td>
+          </tr>
+          <tr>
+            <td><strong>Driftleders telefontid:</strong></td>
+            <td>Mandag - onsdag 10:00-12:00</td>
+          </tr>
+        </tbody>
       </table>
 
-      <ul><strong>Driftsleders arbeidstid er som følger:</strong>
-        <li>Mandag og tirsdag: 08:00 - 16:00</li>
-        <li>Onsdag: 08:00 - 12:00</li>
-      </ul>
-
-      <p className='kontakt--p'>Driftsleder har telefontid mandag til onsdag 10-12, tlf: 489 50 534</p>
-
-      <section>
-        <p><strong>Henvendelser styret:</strong> <a href="mailto:styret@noklevann.no">styret@noklevann.no</a></p>
-        <p><strong>Henvendelser drift:</strong> <a href="mailto:drift@noklevann.no">drift@noklevann.no</a></p>
-      </section>
-
     </div>
-
     <h2 id='nyheter'>Nyheter</h2>
+      <div className='nyheter'>
+        {news.map((post) => {
+          return <a className='nyhet' key={post._id} href={`/nyhet?id=${post._id}`}>
+            
+            <section className='nyhet__header'>
+            <h3>{post.title}{post.file?.asset?._ref && (
+              <FaFile />
+            )}</h3>
+            <p className='nyhet__header__date'>{norwegianDate(post._createdAt)}</p>
+            </section>
+            <section className='nyhet__header'>
 
-    <div className='nyheter'>
-
-      {news.map((post) => {
-        return <a className='nyhet' key={post._id} href={`/nyhet?id=${post._id}`}>
-          <section className='nyhet__header'>
-          <h3>{post.title}</h3>
-          <p className='nyhet__header__date'>{norwegianDate(post._createdAt)}</p>
-          </section>
-          <section className='nyhet__text'>
-            {newsTrimmer(post.nyhet)}
-          </section>
-        </a>
-      })}
+            </section>
+            <section className='nyhet__text'>
+              {newsTrimmer(post.nyhet)}
+            </section>
+          </a>
+        })}
+      </div>
     </div>
-    </>
   )
 }
 

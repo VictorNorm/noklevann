@@ -5,7 +5,7 @@
     display: flex;
     margin-bottom: 2rem;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(32,40,69);
     height: 125px;
     justify-content: center;
     align-items: center;
@@ -30,14 +30,23 @@
         display: flex;
         flex-direction: column;
         background-color: white;
+        color: white;
+        background-color: rgb(32,40,69);
         padding: 1rem;
+    }
+
+    section {
+        color: white;
+    }
+
+    .document-wrapper__image {
+        color: white;
     }
 }
 
-.document-wrapper:hover {
-    background-color: white;
-        border: 2px solid #4b4d5b;
-}
+.document-wrapper:hover * {
+    text-decoration: underline;
+  }
 .document-wrapper:first-of-type {
     margin-top: 2rem;
 }
