@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading";
-import Subheading from "../components/SubHeading";
 import { handlePdf } from '../functions/handlePdf';
-import { FaFile } from "react-icons/fa";
 
 function Rapporter() {
 
@@ -47,8 +45,9 @@ function Rapporter() {
     <Heading heading={"Rapporter"}/>
     {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
   return (
-    <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
-      <img src={file.imageUrl} alt='placeholder'></img>
+    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+      <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
+      <img src={file.imageUrl} alt='placeholder' />
       <div className='document-wrapper__container'>
         <h3>{file.title}</h3>
         <p>Les mer..</p>
