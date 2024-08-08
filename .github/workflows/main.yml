@@ -19,11 +19,28 @@ jobs:
     - name: Install dependencies
       run: npm install
     
+    - name: Update browserslist
+      run: npx update-browserslist-db@latest
+    
     - name: Build
-      run: npm run build
+      run: CI=false npm run build
+    
+    - name: Check for CNAME file
+      id: check-cname
+      run: |
+        if [ -f CNAME ]; then
+          echo "::set-output name=exists::true"
+        else
+          echo "::set-output name=exists::false"
+        fi
+    
+    - name: Copy CNAME
+      if: steps.check-cname.outputs.exists == 'true'
+      run: cp CNAME build/CNAME
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: gh-pages  # The branch the action should deploy to.
         folder: build  # The folder the action should deploy.
+        token: ${{ secrets.GITHUB_TOKEN }}
