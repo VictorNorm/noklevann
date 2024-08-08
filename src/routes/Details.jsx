@@ -45,11 +45,12 @@ function Details() {
         <p className='details__section--date'>{norwegianDate(news._createdAt)}</p>
       </section>
       {divideTextIntoSections(news.nyhet, 400).map((section, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <p key={index} className='details__p'>{section}</p>
       ))}
       {news.fileUrl && (
         <div className='details__pdf'>
-          <button onClick={() => handlePdf(news.fileUrl, news.title)} id='viewPdf'>
+          <button type='button' onClick={() => handlePdf(news.fileUrl, news.title)} id='viewPdf'>
             View PDF
           </button>
         </div>
