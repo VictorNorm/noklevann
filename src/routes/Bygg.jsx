@@ -24,7 +24,6 @@ function Bygg() {
         
         const docs = result.result.map(doc => {
           const fileUrl = doc.fileUrl;
-          console.log(doc)
         
           return {
             imageUrl: doc.imageUrl,
@@ -42,12 +41,8 @@ function Bygg() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(documents)
-  })
-
   return (
-    <>
+    <div className='content-wrapper'>
     <Heading heading={"Bygg"}/>
     {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
   return (
@@ -62,7 +57,7 @@ function Bygg() {
     </div>
   );
 })}
-    </>
+    </div>
   )
 }
 export default Bygg

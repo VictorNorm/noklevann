@@ -4,14 +4,14 @@ import Heading from "../components/Heading"
 
 function Uteomraader() {
   return (
-    <>
+    <div className='content-wrapper'>
     <Heading heading={"Uteområder"}/>
     {/* <Subheading subHeading={"Hageparsell"}/>
     <Subheading subHeading={"Platting"}/>
     <Subheading subHeading={"Beplanting"}/>
     <Subheading subHeading={"Hageavfall"}/>
     <Subheading subHeading={"Treplantings - plan"}/> */}
-    </>
+    </div>
   )
 }
 

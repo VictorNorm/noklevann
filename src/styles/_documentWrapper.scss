@@ -11,6 +11,9 @@
     align-items: center;
     overflow: hidden;
     padding: 0.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 2rem;
 
     .document-wrapper__image {
         height: 60px;

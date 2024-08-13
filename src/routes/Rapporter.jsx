@@ -3,7 +3,6 @@ import Heading from "../components/Heading";
 import { handlePdf } from '../functions/handlePdf';
 
 function Rapporter() {
-
   const [documents, setDocuments] = useState([]);
 
   useEffect(() => {
@@ -20,17 +19,12 @@ function Rapporter() {
         const response = await fetch(url);
         const result = await response.json();
         
-        const docs = result.result.map(doc => {
-          const fileUrl = doc.fileUrl;
-          console.log(doc)
-        
-          return {
-            imageUrl: doc.imageUrl,
-            title: doc.title,
-            fileUrl: fileUrl,
-            id: doc._id 
-          };
-        });
+        const docs = result.result.map(doc => ({
+          imageUrl: doc.imageUrl,
+          title: doc.title,
+          fileUrl: doc.fileUrl,
+          id: doc._id 
+        }));
         setDocuments(docs);
       } catch (error) {
         console.error('Error fetching documents:', error);
@@ -40,23 +34,46 @@ function Rapporter() {
     fetchData();
   }, []);
 
+  // Separate documents into two categories
+  const arsmoteDocuments = documents.filter(doc => 
+    doc.title.toLowerCase().includes('årsmøte')
+  );
+  const otherDocuments = documents.filter(doc => 
+    !doc.title.toLowerCase().includes('årsmøte')
+  );
+
+  // Sort documents alphabetically
+  const sortDocuments = (docs) => 
+    docs.sort((a, b) => a.title.localeCompare(b.title));
+
+  const renderDocuments = (docs) => 
+    docs.map((file) => (
+      // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+      <div 
+        className='document-wrapper' 
+        onClick={() => handlePdf(file.fileUrl, file.title)} 
+        key={file.id}
+      >
+        <img src={file.imageUrl} alt='placeholder' />
+        <div className='document-wrapper__container'>
+          <h3>{file.title}</h3>
+          <p>Les mer..</p>
+        </div>
+      </div>
+    ));
+
   return (
-    <>
-    <Heading heading={"Rapporter"}/>
-    {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
-  return (
-    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-      <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
-      <img src={file.imageUrl} alt='placeholder' />
-      <div className='document-wrapper__container'>
-        <h3>{file.title}</h3>
-        <p>Les mer..</p>
+    <div className='content-wrapper'>
+      <Heading heading={"Rapporter"} />
+      <div>
+        {renderDocuments(sortDocuments(otherDocuments))}
+      </div>
+      <h2>Årsmøter</h2>
+      <div>
+        {renderDocuments(sortDocuments(arsmoteDocuments))}
       </div>
     </div>
   );
-})}
-    </>
-  )
 }
 
 export default Rapporter;

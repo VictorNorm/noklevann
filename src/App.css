@@ -28,15 +28,21 @@ h2 {
   font-size: 32px;
 }
 
+.content-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 55px;
   width: 100%;
-  background-color: rgb(5, 9, 23);
+  background-color: rgb(49, 53, 67);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: white;
+  margin-top: 0.4rem;
 }
 .nav ul {
   list-style: none;
@@ -58,21 +64,35 @@ h2 {
 
 .header {
   background-color: rgb(49, 53, 67);
-  height: 250px;
+  height: 190px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.header img {
+  height: 100%;
+  display: block;
+  width: 320px;
+}
+.header .img2 {
+  object-fit: cover;
+  height: 100%;
 }
 .header h2 {
   color: white;
-  font-size: 60px;
-  font-family: "Tangerine";
+  font-size: 46px;
+  font-family: "Bona Nova SC";
+  font-weight: 400;
+  font-style: normal;
 }
 .header a {
   text-decoration: none;
   opacity: 0.9;
   transition: opacity 0.1s ease-in-out;
+  margin-bottom: 1rem;
 }
 .header a:hover {
   opacity: 1;
@@ -112,6 +132,9 @@ h2 {
   align-items: center;
   overflow: hidden;
   padding: 0.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 .document-wrapper .document-wrapper__image {
   height: 60px;
@@ -156,7 +179,7 @@ h2 {
   padding: 1rem;
   border-radius: 7px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: rgb(32, 40, 69);
   height: 125px;
   display: block;
   text-decoration: none;
@@ -170,8 +193,11 @@ h2 {
   margin-bottom: 0.75rem;
   font-size: 0.9rem;
 }
+.nyheter .nyhet * {
+  color: white;
+}
 .nyheter .nyhet:hover {
-  border: 2px solid #4b4d5b;
+  border: 2px solid white;
 }
 .nyheter svg {
   font-size: 16px;
@@ -189,7 +215,8 @@ h2 {
   padding: 1rem;
   border-radius: 7px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: rgb(32, 40, 69);
+  color: white;
 }
 .kontakt table {
   width: 650px;
@@ -210,7 +237,8 @@ h2 {
 
 .henvendelser {
   font-family: Arial, sans-serif;
-  background-color: white;
+  background-color: rgb(32, 40, 69);
+  color: white;
   padding: 1rem;
   border-radius: 7px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -344,8 +372,12 @@ footer {
   color: white;
   width: 100%;
   bottom: 0;
-  height: 45px;
+  height: 80px;
   margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .nokkelen section {

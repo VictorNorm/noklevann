@@ -3,7 +3,10 @@ footer {
     color: white;
     width: 100%;
     bottom: 0;
-    height: 45px;
-    // border-top: 2px solid white;
+    height: 80px;
     margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }

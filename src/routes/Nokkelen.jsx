@@ -3,7 +3,6 @@ import { handlePdf } from '../functions/handlePdf';
 import Heading from "../components/Heading"
 
 function Nøkkelen() {
-
   const [documents, setDocuments] = useState([]);
 
   useEffect(() => {
@@ -21,18 +20,13 @@ function Nøkkelen() {
         const response = await fetch(url);
         const result = await response.json();
         
-        const docs = result.result.map(doc => {
-          const fileUrl = doc.fileUrl;
-          console.log(doc)
-        
-          return {
-            imageUrl: doc.imageUrl,
-            title: doc.title,
-            fileUrl: fileUrl,
-            publishedAt: doc.publishedAt,
-            id: doc._id 
-          };
-        });
+        const docs = result.result.map(doc => ({
+          imageUrl: doc.imageUrl,
+          title: doc.title,
+          fileUrl: doc.fileUrl,
+          publishedAt: doc.publishedAt,
+          id: doc._id 
+        }));
         
         const sortedDocs = docs.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
         setDocuments(sortedDocs);
@@ -44,27 +38,34 @@ function Nøkkelen() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(documents)
-  })
+  const handleKeyDown = (event, file) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handlePdf(file.fileUrl, file.title);
+    }
+  };
 
   return (
-    <>
-    <Heading heading={"Nøkkelen"}/>
-    {documents.map((file) => {
-      return (
-        <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
-          <img src={file.imageUrl} alt='placeholder'></img>
+    <div className='content-wrapper'>
+      <Heading heading={"Nøkkelen"}/>
+      {documents.map((file) => (
+        <div 
+          className='document-wrapper' 
+          onClick={() => handlePdf(file.fileUrl, file.title)} 
+          onKeyDown={(e) => handleKeyDown(e, file)}
+          role="button"
+          tabIndex={0}
+          key={file.id}
+        >
+          <img src={file.imageUrl} alt='placeholder'/>
           <div className='document-wrapper__container'>
             <h3>{file.title}</h3>
             <p>Les mer..</p>
           </div>
         </div>
-      );
-    })}
-    </>
-  )
+      ))}
+    </div>
+  );
 }
 
-export default Nøkkelen
-
+export default Nøkkelen;

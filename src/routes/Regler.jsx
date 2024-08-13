@@ -23,7 +23,6 @@ function Regler() {
         
         const docs = result.result.map(doc => {
           const fileUrl = doc.fileUrl;
-          console.log(doc)
         
           return {
             imageUrl: doc.imageUrl,
@@ -42,15 +41,16 @@ function Regler() {
   }, []);
 
   return (
-    <>
+    <div className='content-wrapper'>
     <Heading heading={"Lovverk"}/>
     <a href="https://lovdata.no/dokument/NLO/lov/1960-02-04-2" id='lovverk'>Les om lover fra lovdata.no her..</a>
     <h2>Regler</h2>
-    {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
+    {documents.sort((a, b, index) => a.title.localeCompare(b.title)).map((file) => {
   return (
-    <div className='regler-container'>
-      <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}} key={file.id}>
-        <img src={file.imageUrl} alt='placeholder'></img>
+    <div className='regler-container' key={file.id}>
+      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+      <div className='document-wrapper' onClick={() => {handlePdf(file.fileUrl, file.title)}}>
+        <img src={file.imageUrl} alt='placeholder'/>
         <div className='document-wrapper__container'>
           <h3>{file.title}</h3>
           <p>Les mer..</p>
@@ -59,7 +59,7 @@ function Regler() {
     </div>
   );
 })}
-    </>
+    </div>
   )
 }
 

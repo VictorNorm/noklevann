@@ -15,7 +15,6 @@ function Hjem() {
       try {
         const response = await fetch(url);
         const result = await response.json();
-        console.log(result.result)
         
         setNews(result.result);
       } catch (error) {

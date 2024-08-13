@@ -39,7 +39,7 @@ function Praktisk() {
   }, []);
 
   return (
-    <>
+    <div className='content-wrapper'>
     <Heading heading={"Praktisk"}/>
     {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
   return (
@@ -53,7 +53,7 @@ function Praktisk() {
     </div>
   );
 })}
-    </>
+    </div>
   )
 }
 
