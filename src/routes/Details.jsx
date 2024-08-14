@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Heading from '../components/Heading';
 import { divideTextIntoSections } from '../functions/divideTextIntoSections';
 import { norwegianDate } from '../functions/norwegianDate';
@@ -6,9 +7,11 @@ import { handlePdf } from '../functions/handlePdf';
 
 function Details() {
   const [news, setNews] = useState(null);
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const postId = urlParams.get('id');
+  // const queryString = window.location.search;
+  // const urlParams = new URLSearchParams(queryString);
+  // const postId = urlParams.get('id');
+  const [searchParams] = useSearchParams();
+  const postId = searchParams.get('id');
 
   useEffect(() => {
     const fetchData = async () => {

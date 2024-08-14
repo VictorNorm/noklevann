@@ -4,6 +4,7 @@ import { norwegianDate } from '../functions/norwegianDate';
 import { newsTrimmer } from '../functions/newsTrimmer';
 import { FaFile } from "react-icons/fa";
 import SEO from '../components/SEO';
+import { Link } from 'react-router-dom';
 
 function Hjem() {
   const [news, setNews] = useState([]);
@@ -93,23 +94,20 @@ function Hjem() {
     </div>
     <h2 id='nyheter'>Nyheter</h2>
       <div className='nyheter'>
-        {news.map((post) => {
-          return <a className='nyhet' key={post._id} href={`/nyhet?id=${post._id}`}>
-            
+        {news.map((post) => (
+          <Link className='nyhet' key={post._id} to={`/nyhet?id=${post._id}`}>
             <section className='nyhet__header'>
-            <h3>{post.title}{post.file?.asset?._ref && (
-              <FaFile />
-            )}</h3>
-            <p className='nyhet__header__date'>{norwegianDate(post._createdAt)}</p>
-            </section>
-            <section className='nyhet__header'>
-
+              <h3>
+                {post.title}
+                {post.file?.asset?._ref && <FaFile />}
+              </h3>
+              <p className='nyhet__header__date'>{norwegianDate(post._createdAt)}</p>
             </section>
             <section className='nyhet__text'>
               {newsTrimmer(post.nyhet)}
             </section>
-          </a>
-        })}
+          </Link>
+        ))}
       </div>
     </div>
   )
