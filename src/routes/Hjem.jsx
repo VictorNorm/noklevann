@@ -3,6 +3,7 @@ import Heading from "../components/Heading"
 import { norwegianDate } from '../functions/norwegianDate';
 import { newsTrimmer } from '../functions/newsTrimmer';
 import { FaFile } from "react-icons/fa";
+import SEO from '../components/SEO';
 
 function Hjem() {
   const [news, setNews] = useState([]);
@@ -27,6 +28,7 @@ function Hjem() {
 
   return (
     <div className='hjem'>
+      <SEO title="Hjem" />
       <Heading heading={"Henvendelser i sommerferien"}/>
         <div className="henvendelser">
           <p>

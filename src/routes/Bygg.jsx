@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading"
-// import ContentCard from '../components/ContentCard'
 import { handlePdf } from '../functions/handlePdf';
-// import { FaFile } from "react-icons/fa";
+import SEO from '../components/SEO';
 
 function Bygg() {
 
@@ -43,6 +42,7 @@ function Bygg() {
 
   return (
     <div className='content-wrapper'>
+      <SEO title="Bygg" />
     <Heading heading={"Bygg"}/>
     {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
   return (

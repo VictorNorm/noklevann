@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading";
 import { handlePdf } from '../functions/handlePdf';
+import SEO from '../components/SEO';
+
 
 function Praktisk() {
   const [documents, setDocuments] = useState([]);
@@ -40,6 +42,7 @@ function Praktisk() {
 
   return (
     <div className='content-wrapper'>
+      <SEO title="Praktisk" />
     <Heading heading={"Praktisk"}/>
     {documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => {
   return (

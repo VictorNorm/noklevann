@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { handlePdf } from '../functions/handlePdf';
 import Heading from "../components/Heading"
+import SEO from '../components/SEO';
+
 
 function Nøkkelen() {
   const [documents, setDocuments] = useState([]);
@@ -47,6 +49,7 @@ function Nøkkelen() {
 
   return (
     <div className='content-wrapper'>
+      <SEO title="Nøkkelen" />
       <Heading heading={"Nøkkelen"}/>
       {documents.map((file) => (
         <div 

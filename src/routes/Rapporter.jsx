@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading";
 import { handlePdf } from '../functions/handlePdf';
+import SEO from '../components/SEO';
+
 
 function Rapporter() {
   const [documents, setDocuments] = useState([]);
@@ -64,6 +66,7 @@ function Rapporter() {
 
   return (
     <div className='content-wrapper'>
+      <SEO title="Rapporter" />
       <Heading heading={"Rapporter"} />
       <div>
         {renderDocuments(sortDocuments(otherDocuments))}

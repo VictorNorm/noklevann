@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Heading from "../components/Heading";
 import { handlePdf } from '../functions/handlePdf';
-// import { FaFile } from "react-icons/fa";
+import SEO from '../components/SEO';
 
 function Regler() {
 
@@ -42,6 +42,7 @@ function Regler() {
 
   return (
     <div className='content-wrapper'>
+      <SEO title="Regler" />
     <Heading heading={"Lovverk"}/>
     <a href="https://lovdata.no/dokument/NLO/lov/1960-02-04-2" id='lovverk'>Les om lover fra lovdata.no her..</a>
     <h2>Regler</h2>

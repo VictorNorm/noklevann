@@ -1,11 +1,12 @@
 import React from 'react'
 import Heading from "../components/Heading"
-// import Subheading from "../components/SubHeading"
+import SEO from '../components/SEO';
 
 function Uteomraader() {
   return (
     <div className='content-wrapper'>
-    <Heading heading={"Uteområder"}/>
+      <SEO title="Uteområder" />
+      <Heading heading={"Uteområder"}/>
     {/* <Subheading subHeading={"Hageparsell"}/>
     <Subheading subHeading={"Platting"}/>
     <Subheading subHeading={"Beplanting"}/>
