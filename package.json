@@ -2,7 +2,7 @@
 	"name": "noklevann",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://VictorNorm.github.io/noklevann",
+	"homepage": "https://www.noklevann.no",
 	"dependencies": {
 		"@react-pdf/renderer": "^3.4.4",
 		"@sanity/client": "^6.15.1",
