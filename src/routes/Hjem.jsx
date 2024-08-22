@@ -30,12 +30,10 @@ function Hjem() {
   return (
     <div className='hjem'>
       <SEO title="Hjem" />
-      <Heading heading={"Henvendelser i sommerferien"}/>
+      <Heading heading={"Kontaktpersoner ved akutte tilfeller."}/>
         <div className="henvendelser">
-          <p>
-            <strong>Driftsleder</strong> har sommerferie fra 17. juli til og med 18. august. Henvendelser vil
-            først bli besvart etter driftsleders ferie.
-          </p>
+          <h3 className='henvendelser__sub-heading'>Ved akutte tilfeller kontakt driftsleder. Om han ikke er tilgjengelig henvend deg til kontaktene under.</h3>
+          <h3 className='henvendelser__sub-heading'>Note: Se vedtekter for hvilke utgifter som dekkes av borettslaget eller den enkelte beboer, eller kontakt driftsleder eller styret om du er i tvil.</h3>
           <p>Ved akutte tilfeller ring:</p>
           <ul>
             <li>Brann: 110.</li>
@@ -52,7 +50,7 @@ function Hjem() {
           </p>
           <p>Tekst nederst på alle sider</p>
       </div>
-      <h2>Styret</h2>
+      <h2>Styret 2024-2025</h2>
       <div className="kontakt">
       <table>
         <tbody>
@@ -72,6 +70,10 @@ function Hjem() {
             <td><strong>Varamedlem:</strong></td>
             <td>Jorunn Tønnesen, Tore Moberg</td>
           </tr>
+          <tr>
+            <td><strong>Driftsleder:</strong></td>
+            <td>Knut Sture Myra</td>
+          </tr>
           <tr className='tr--margin-top'>
             <td><strong>Henvendelser styret:</strong></td>
             <td>styret@noklevann.no</td>
@@ -90,6 +92,8 @@ function Hjem() {
           </tr>
         </tbody>
       </table>
+      <p className='kontakt__table_p'>NB: Nye saker eller skader skal alltid meldes inn per e-post.
+        Telefon og sms kan benyttes ved akutte tilfeller eller allerede etablerte driftsprosjekter.</p>
 
     </div>
     <h2 id='nyheter'>Nyheter</h2>

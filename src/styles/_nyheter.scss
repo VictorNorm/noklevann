@@ -62,6 +62,10 @@
         width: 650px;
     }
 
+    .kontakt__table_p {
+      margin-top: 1rem;
+    }
+
     td {
       padding-right: 1rem;
     }
@@ -86,6 +90,10 @@
     padding: 1rem;
     border-radius: 7px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+    .henvendelser__sub-heading {
+      margin-bottom: 1.5rem;
+    }
   }
 
   .tr--margin-top td {

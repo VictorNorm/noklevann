@@ -221,6 +221,9 @@ h2 {
 .kontakt table {
   width: 650px;
 }
+.kontakt .kontakt__table_p {
+  margin-top: 1rem;
+}
 .kontakt td {
   padding-right: 1rem;
 }
@@ -242,6 +245,9 @@ h2 {
   padding: 1rem;
   border-radius: 7px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.henvendelser .henvendelser__sub-heading {
+  margin-bottom: 1.5rem;
 }
 
 .tr--margin-top td {
