@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.77346060.css",
-    "main.js": "/static/js/main.4efb9647.js",
+    "main.css": "/static/css/main.f386e873.css",
+    "main.js": "/static/js/main.03d656ba.js",
     "static/media/noklevannDomene.jpg": "/static/media/noklevannDomene.ca86775739e972fe641b.jpg",
     "static/media/ada.jpg": "/static/media/ada.9f3cb32eac0c16baefea.jpg",
     "index.html": "/index.html",
-    "main.77346060.css.map": "/static/css/main.77346060.css.map",
-    "main.4efb9647.js.map": "/static/js/main.4efb9647.js.map"
+    "main.f386e873.css.map": "/static/css/main.f386e873.css.map",
+    "main.03d656ba.js.map": "/static/js/main.03d656ba.js.map"
   },
   "entrypoints": [
-    "static/css/main.77346060.css",
-    "static/js/main.4efb9647.js"
+    "static/css/main.f386e873.css",
+    "static/js/main.03d656ba.js"
   ]
 }
