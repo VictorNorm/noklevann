@@ -45,10 +45,6 @@ function Hjem() {
             <li>Trevelting: Oslo Brannvesen 21 80 21 80</li>
             <li>Telenor (TV og internett): 915 09 000</li>
           </ul>
-          <p>
-            Alle andre akutte henvendelser i driftslederens ferie: Bjørnar Støen 414 24 566
-          </p>
-          <p>Tekst nederst på alle sider</p>
       </div>
       <h2>Styret 2024-2025</h2>
       <div className="kontakt">
@@ -80,7 +76,7 @@ function Hjem() {
           </tr>
           <tr>
             <td><strong>Henvendelser drift:</strong></td>
-            <td>drift@noklevann.no</td>
+            <td>drift@noklevann.no, Tlf: 489 50 534</td>
           </tr>
           <tr className='tr--margin-top'>
             <td><strong>Driftleders arbeidstid:</strong></td>
