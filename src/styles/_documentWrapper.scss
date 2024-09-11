@@ -53,3 +53,25 @@
 .document-wrapper:first-of-type {
     margin-top: 2rem;
 }
+
+@media (width < 740px) {
+
+    .document-wrapper img {
+        display: none;
+    }
+
+    .document-wrapper {
+        margin: 2rem 1rem;
+    }
+
+    .document-wrapper__container h3 {
+        font-size: clamp(0.75rem, 3.5vw, 5rem);
+    }
+}
+
+@media (width < 400px) {
+
+    .document-wrapper__container h3 {
+        font-size: clamp(0.75rem, 5vw, 5rem);
+    }
+}

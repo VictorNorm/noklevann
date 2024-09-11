@@ -33,6 +33,9 @@ h2 {
   margin: 0 auto;
 }
 
-// h1 {
-//   margin-top: 1rem;
-// }
+@media (width < 740px) {
+  .content-wrapper > h1,
+  .content-wrapper > h2 {
+    margin-left: 1rem;
+  }
+} 

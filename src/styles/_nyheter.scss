@@ -50,37 +50,59 @@
     font-size: 32px;
 }
 
-.kontakt{
+.kontakt {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgb(32, 40, 69);
+  color: white;
+  
+  table {
+      width: 100%;
+      max-width: 650px;
+  }
+
+  .kontakt__table_p {
     margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 7px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: rgb(32, 40, 69);
-    color: white;
-    
-    table {
-        width: 650px;
-    }
+  }
 
-    .kontakt__table_p {
+  td {
+    padding-right: 1rem;
+  }
+
+  .kontakt--p {
+      margin: 1rem 0rem;
+  }
+
+  ul {
       margin-top: 1rem;
-    }
+      margin-bottom: 1rem;
+  }
+  li {
+      margin-left: 2rem;
+  }
 
-    td {
-      padding-right: 1rem;
-    }
+  @media (max-width: 700px) {
+      table {
+          width: 100%;
+      }
 
-    .kontakt--p {
-        margin: 1rem 0rem;
-    }
+      tr {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+      }
 
-    ul {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    li {
-        margin-left: 2rem;
-    }
+      td {
+          padding-right: 0;
+      }
+
+      td:first-child {
+          font-weight: bold;
+          margin-bottom: 0.25rem;
+      }
+  }
 }
 
 .henvendelser {
@@ -120,6 +142,19 @@
   .hjem {
     h1 {
         margin-bottom: 2rem;
+    }
+  }
+
+  @media (width < 1100px) {
+
+    .kontakt,
+    .henvendelser {
+      border-radius: 0;
+    }
+
+    .hjem > h1,
+    .hjem > h2 {
+      margin-left: 1rem;
     }
   }
 
