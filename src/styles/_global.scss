@@ -33,6 +33,22 @@ h2 {
   margin: 0 auto;
 }
 
+#invisible-button {
+  // display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 @media (width < 740px) {
   .content-wrapper > h1,
   .content-wrapper > h2 {

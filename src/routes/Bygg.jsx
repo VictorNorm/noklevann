@@ -8,7 +8,9 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 // Important: set the worker source for react-pdf
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-// Custom error boundary component
+// ErrorBoundary component remains the same
+
+// ErrorBoundary component
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -32,11 +34,24 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+
 function Bygg() {
   const [documents, setDocuments] = useState([]);
   const [selectedPdf, setSelectedPdf] = useState(null);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust this breakpoint as needed
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,8 +83,13 @@ function Bygg() {
   }, []);
 
   const handlePdfClick = (fileUrl) => {
-    setSelectedPdf(fileUrl);
-    setPageNumber(1);
+    if (isMobile) {
+      setSelectedPdf(fileUrl);
+      setPageNumber(1);
+    } else {
+      // Use the original handlePdf function for PC
+      window.open(fileUrl, '_blank');
+    }
   };
 
   const handleKeyDown = (event, fileUrl) => {
@@ -94,10 +114,10 @@ function Bygg() {
     <div className='content-wrapper'>
       <SEO title="Bygg" />
       <Heading heading={"Bygg"}/>
-      {selectedPdf ? (
+      {selectedPdf && isMobile ? (
         <ErrorBoundary>
           <div className="pdf-viewer">
-            <button onClick={() => setSelectedPdf(null)} type='button'>Close PDF</button>
+            <button onClick={() => setSelectedPdf(null)} type="button">Close PDF</button>
             <Document
               file={selectedPdf}
               onLoadSuccess={onDocumentLoadSuccess}
@@ -106,16 +126,23 @@ function Bygg() {
               <Page pageNumber={pageNumber} width={Math.min(600, window.innerWidth - 30)} />
             </Document>
             <div className="pdf-controls">
-              <button onClick={previousPage} disabled={pageNumber <= 1} type='button'>Previous</button>
+              <button onClick={previousPage} disabled={pageNumber <= 1} type="button">Previous</button>
               <p>Page {pageNumber} of {numPages}</p>
-              <button onClick={nextPage} disabled={pageNumber >= numPages} type='button'>Next</button>
+              <button onClick={nextPage} disabled={pageNumber >= numPages} type="button">Next</button>
             </div>
           </div>
         </ErrorBoundary>
       ) : (
         documents.sort((a, b) => a.title.localeCompare(b.title)).map((file) => (
-          <div className='document-wrapper' onClick={() => handlePdfClick(file.fileUrl)} onKeyDown={handleKeyDown} key={file.id}>
-            <img src={file.imageUrl} alt='placeholder' />
+          <div 
+            className='document-wrapper' 
+            onClick={() => handlePdfClick(file.fileUrl)} 
+            onKeyDown={(e) => handleKeyDown(e, file.fileUrl)}
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
+            tabIndex={0}
+            key={file.id}
+          >
+            <img src={file.imageUrl} alt={file.title} />
             <div className='document-wrapper__container'>
               <h3>{file.title}</h3>
               <p>Les mer..</p>

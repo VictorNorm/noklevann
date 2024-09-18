@@ -1,3 +1,37 @@
 #soknader {
     margin: 2rem 0rem;
 }
+
+.info {
+    background-color: rgb(32, 40, 69);
+    border-radius: 5px;
+    margin-bottom: 2rem;
+
+    padding: 1rem;
+    color: white;
+
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+#info {
+    margin-bottom: 2rem;
+}
+
+@media (width < 715px) {
+    .info {
+        border-radius: 0px !important;
+    }
+}
+
+@media (width < 770px) {
+
+    #info, #soknader {
+        margin-left: 1rem;
+    }
+    
+}

@@ -33,6 +33,18 @@ h2 {
   margin: 0 auto;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 @media (width < 740px) {
   .content-wrapper > h1,
   .content-wrapper > h2 {
@@ -581,6 +593,34 @@ h2 {
   margin: 2rem 0rem;
 }
 
+.info {
+  background-color: rgb(32, 40, 69);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  color: white;
+}
+.info ul {
+  list-style: none;
+}
+.info ul li {
+  margin-bottom: 2rem;
+}
+
+#info {
+  margin-bottom: 2rem;
+}
+
+@media (width < 715px) {
+  .info {
+    border-radius: 0px !important;
+  }
+}
+@media (width < 770px) {
+  #info, #soknader {
+    margin-left: 1rem;
+  }
+}
 .pdf-viewer {
   display: flex;
   flex-direction: column;
