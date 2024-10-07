@@ -5,13 +5,13 @@ import Root from "./routes/Root";
 import Bygg from "./routes/Bygg";
 import Uteomraader from "./routes/Uteomraader";
 import Regler from "./routes/Regler";
-import Rapporter from "./routes/Rapporter";
+import Dokumenter from "./routes/Dokumenter";
 import Praktisk from "./routes/Praktisk";
 import ErrorPage from "./routes/Error-page";
 import Hjem from "./routes/Hjem";
 import Soknader from "./routes/Soknader";
 import Details from "./routes/Details";
-import Nokkelen from "./routes/Nokkelen";
+import Kontaktinfo from "./routes/Kontaktinfo";
 
 const router = createHashRouter([
 	{
@@ -36,8 +36,8 @@ const router = createHashRouter([
 				element: <Regler />,
 			},
 			{
-				path: "rapporter",
-				element: <Rapporter />,
+				path: "dokumenter",
+				element: <Dokumenter />,
 			},
 			{
 				path: "praktisk",
@@ -48,8 +48,8 @@ const router = createHashRouter([
 				element: <Soknader />,
 			},
 			{
-				path: "nokkelen",
-				element: <Nokkelen />,
+				path: "kontaktinfo",
+				element: <Kontaktinfo />,
 			},
 			{
 				path: "nyhet",

@@ -55,9 +55,9 @@ function Nav() {
               } onClick={toggleMenu}>REGLER</NavLink>
             </li>
             <li>
-              <NavLink to="/rapporter" style={({ isActive }) => 
+              <NavLink to="/dokumenter" style={({ isActive }) => 
                 isActive ? activeStyle : undefined
-              } onClick={toggleMenu}>RAPPORTER</NavLink>
+              } onClick={toggleMenu}>DOKUMENTER</NavLink>
             </li>
             <li>
               <NavLink to="/praktisk" style={({ isActive }) => 
@@ -65,9 +65,9 @@ function Nav() {
               } onClick={toggleMenu}>PRAKTISK</NavLink>
             </li>
             <li>
-              <NavLink to="/nokkelen" style={({ isActive }) => 
+              <NavLink to="/kontaktinfo" style={({ isActive }) => 
                 isActive ? activeStyle : undefined
-              } onClick={toggleMenu}>NØKKELEN</NavLink>
+              } onClick={toggleMenu}>KONTAKTINFO</NavLink>
             </li>
             <li>
               <NavLink to="/soknader" style={({ isActive }) => 
