@@ -11,7 +11,8 @@ function Hjem() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const query = encodeURIComponent(`*[_type == "nyheter"]`);
+      // Updated query to include sorting by _createdAt in descending order
+      const query = encodeURIComponent(`*[_type == "nyheter"] | order(_createdAt desc)`);
       const url = `https://39o8vvzc.api.sanity.io/v2024-03-19/data/query/production?query=${query}`;
       
       try {
